@@ -40,12 +40,9 @@ if( !empty( $_REQUEST['submit'] ) ){
   }
 }
 
-# prolog
-echo '<?xml version="1.0"?>'."\r\n";
-
 ?>
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html id="tipr_mobi">
 <head>
   <title>Tipr</title>
 <?php headContent(); ?>
