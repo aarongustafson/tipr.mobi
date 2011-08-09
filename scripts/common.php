@@ -20,10 +20,11 @@ function headContent(){
  * Purpose:  Writes out the common meta elements
  * ---------------------------------------------------------------------------*/
 function meta(){ ?>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Language" content="en-us" />
-  <meta http-equiv="Cache-Control" content="max-age=86400" />
-  <meta name="Copyright" content="(c) <?= copyrightYear(); ?> Easy! Designs, LLC. All rights reserved." />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Language" content="en-us"/>
+  <meta http-equiv="Cache-Control" content="max-age=86400"/>
+  <meta name="Copyright" content="(c) <?= copyrightYear(); ?> Easy! Designs, LLC. All rights reserved."/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
   <link rel="apple-touch-icon" href="/appicon.png"/>
 <?php } # end meta()
 
