@@ -15,7 +15,9 @@ assert_options( ASSERT_CALLBACK,   'assert_handler' );
 
 # DB
 require_once 'classes/mysql.php';
-if( $_SERVER['HTTP_HOST'] == 'localhost' ){
+if ( $_SERVER['HTTP_HOST'] == 'localhost' ||
+     strpos( $_SERVER['HTTP_HOST'], 'dev' ) !== FALSE )
+{
   include 'cparams.php';
 } else {
   include '/var/www/mysql/tipr_mobi.php';
