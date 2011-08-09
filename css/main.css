@@ -1,0 +1,143 @@
+/* =Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+:focus { outline: 0; }
+body { line-height: 1; color: black; background: white; }
+ol, ul { list-style: none; }
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+/* =Layout */
+body {
+  font: 62.5% "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", sans-serif;
+  padding: 10px 30px;
+}
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: .3em;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+ul, ol, p {
+  font-size: 1.4em;
+}
+ol.steps {
+  margin: 0 0 1.5em 20px;
+  list-style: decimal;
+}
+p {
+  clear: both;
+  margin-bottom: 1.5em;
+}
+code {
+  font: 1em Monaco, "Courier New", monospace;
+}
+em, strong {
+  font-weight: bold;
+}
+
+/* =Promo */
+#promo {
+  border: 1px solid;
+  padding: 5px;
+}
+
+/* =FAQ */
+#FAQ ul, #FAQ ol {
+  font-size: 1em;
+  list-style: disc;
+  margin: 0 0 1.5em 1em;
+}
+#FAQ p {
+  font-size: 1em;
+}
+
+/* =Calculator */
+#calculator {
+  border: 0;
+  border-collapse: collapse;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 0 auto 1.5em;
+  width: 90%;
+}
+#calculator th {
+  font-weight: bold;
+  padding: 0 10px 10px 20px;
+  text-align: right;
+}
+#calculator td {
+  font-weight: bold;
+  text-align: left;
+  width: 50%;
+}
+#calculator input,
+#calculator select {
+  background: #fff;
+  font: 1em/1.5 "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", sans-serif;
+  margin-bottom: 5px;
+  height: 1.5em;
+  width: 90%;
+}
+#calculator #check td {
+  padding-right: 8px;
+}
+#calculator #check input {
+  padding-left: 3px;
+  height: 1.2em;
+}
+#calculator #total th,
+#calculator #total td {
+  border-top: 1px solid;
+  padding-top: 10px;
+}
+#calculator #total input {
+  background: #ebebeb;
+  font: 1em/1.5 "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", sans-serif;
+  text-transform: uppercase;
+  width: auto;
+}
+
+#copyright {
+  font-size: 1em;
+  display: block;
+  margin: 0;
+}
+#footer ul {
+  font-size: 1em;
+  margin: 1em 0;
+}
+
+#nav li {
+  float: left;
+  margin-right: 1em;
+  line-height: 1.5;
+}
+
+#bookmarks {
+  clear: both;
+  padding: 1em 0 0;
+}
+#bookmarks li {
+  float: left;
+  margin-right: 1em;
+}
+
+
+.loader {
+  background: center center no-repeat;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
