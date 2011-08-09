@@ -65,7 +65,7 @@ echo '<?xml version="1.0"?>'."\r\n";
       <table id="calculator">
         <tr id="check"<?= ( $err ) ? ' class="error"' : '' ?>>
           <th scope="row"><label for="form-check">Check</label> </th>
-          <td><input type="number" id="form-check" name="check" inputmode="digits" /></td>
+          <td><input type="number" id="form-check" name="check" min="0.00" autofocus="" inputmode="latin digits" placeholder="12.39" /></td>
         </tr>
         <tr id="tip">
           <th scope="row"><label for="form-percent">Tip</label> </th>
