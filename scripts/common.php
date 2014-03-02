@@ -20,12 +20,16 @@ function headContent(){
  * Purpose:  Writes out the common meta elements
  * ---------------------------------------------------------------------------*/
 function meta(){ ?>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <meta http-equiv="Content-Language" content="en-us"/>
-  <meta http-equiv="Cache-Control" content="max-age=86400"/>
-  <meta name="Copyright" content="(c) <?= copyrightYear(); ?> Easy! Designs, LLC. All rights reserved."/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <link rel="apple-touch-icon" href="/appicon.png"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Language" content="en-us"/>
+	<meta http-equiv="Cache-Control" content="max-age=86400"/>
+	<meta name="Copyright" content="(c) <?= copyrightYear(); ?> Easy! Designs, LLC. All rights reserved."/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<link rel="apple-touch-icon" href="/appicon.png"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	<meta http-equiv="cleartype" content="on">
 <?php } # end meta()
 
 /* -----------------------------------------------------------------------------
@@ -33,14 +37,14 @@ function meta(){ ?>
  * Purpose:  Writes out the css for the site
  * ---------------------------------------------------------------------------*/
 function css(){
-  $css = Array( 'main.css' );
-  $color = ( $GLOBALS['PINK'] == true ) ? 'pink.css' : 'color.css';
-  array_push( $css, $color );
-  echo '<style type="text/css"><!--';
-  foreach( $css as $file ){
-    echo file_get_contents( "{$_SERVER['DOCUMENT_ROOT']}/css/{$file}" );
-  }
-  echo '--></style>';
+	$css = Array( 'main.css' );
+	$color = ( $GLOBALS['PINK'] == true ) ? 'pink.css' : 'color.css';
+	array_push( $css, $color );
+	echo '<style type="text/css"><!--';
+	foreach( $css as $file ){
+	  echo file_get_contents( "{$_SERVER['DOCUMENT_ROOT']}/css/{$file}" );
+	}
+	echo '--></style>';
 } # end css()
 
 /* -----------------------------------------------------------------------------
