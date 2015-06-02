@@ -2,7 +2,7 @@
 
 $mhost = 'localhost';
 $mdatabase = 'tipr_mobi';
-$muser = $_ENV['TIPR_DB_USER'];
-$mpassword = $_ENV['TIPR_DB_PASS'];
+$muser = $_SERVER['DB_USER'];
+$mpassword = $_SERVER['DB_PASS'];
 
 ?>
