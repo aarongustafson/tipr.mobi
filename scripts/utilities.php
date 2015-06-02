@@ -15,13 +15,7 @@ assert_options( ASSERT_CALLBACK,   'assert_handler' );
 
 # DB
 require_once 'classes/mysql.php';
-if ( $_SERVER['HTTP_HOST'] == 'localhost' ||
-     strpos( $_SERVER['HTTP_HOST'], 'dev' ) !== FALSE )
-{
-  include 'cparams.php';
-} else {
-  include '/var/www/mysql/tipr_mobi.php';
-}
+include 'cparams.php';
 $MYSQL = &new mysql( $mhost, $muser, $mpassword, $mdatabase, 0 );
 
 $PINK = ( !empty( $_REQUEST['pink'] ) ) ? true : pink();
@@ -98,7 +92,7 @@ function process( $info ){
   }
   
   # return the new info
-  return Array( 'check'   => $info['check'],
+  return array( 'check'   => $info['check'],
                 'tip'     => number_format( $n_tip, 2 ),
                 'total'   => number_format( $total, 2 ),
                 'message' => $message );
