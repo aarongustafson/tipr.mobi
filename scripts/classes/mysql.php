@@ -1,4 +1,5 @@
-<?
+<?php
+
 class mysql {
 
   /* public: connection parameters */
