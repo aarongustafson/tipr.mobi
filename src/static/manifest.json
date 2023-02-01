@@ -1,0 +1,29 @@
+{
+	"dir": "ltr",
+	"lang": "en-US",
+	"id": "/",
+	"name": "Tipr",
+	"description": "Tip calculator that always produces a palindrome total",
+	"publisher": {
+		"name": "Aaron Gustafson",
+		"url": "https://www.aaron-gustafson.com/"
+	},
+	"display": "minimal-ui",
+	"orientation": "any",
+	"theme_color": "#7def77",
+	"background_color": "#000",
+	"icons": [
+		{
+			"src": "/appicon.png",
+			"type": "image/png",
+			"sizes": "56x56",
+			"purpose": "maskable"
+		}
+	],
+	"scope": "/",
+	"start_url": "/",
+	"serviceworker": {
+		"src": "/serviceworker.js",
+		"scope": "/"
+	}
+}

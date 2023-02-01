@@ -1,0 +1,15 @@
+<nav aria-label="Main Navigation">
+	<ul id="nav">
+		{% for link in site.navigation %}
+			{% set mark = page.url | path_in_scope( link.url ) %}
+			<li>
+				{% if mark %}<mark>{% endif %}
+					<a href="{{ link.url }}"
+							{% if link.url == page.url %}aria-current="true"{% endif %}
+							{% if mark %}aria-describedby="current-page-descriptor"{% endif %}
+						>{{ link.text | safe }}</a>
+				{% if mark %}</mark>{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+</nav>

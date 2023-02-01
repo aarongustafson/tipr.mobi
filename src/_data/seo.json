@@ -1,0 +1,13 @@
+{
+	"title": "Tipr.mobi",
+	"description": "A tip calculator that always produces a palindrome total",
+	"url": "https://tipr.mobi",
+	"author": "Aaron Gustafson",
+	"twitter": "tipr",
+	"image": "https://tipr.mobi/appicon.png",
+	"options": {
+		"imageWithBaseUrl": false,
+		"titleDivider": " :: ",
+		"twitterCardType": "summary_small_image"
+	}
+}

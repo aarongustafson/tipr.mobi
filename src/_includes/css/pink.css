@@ -1,0 +1,38 @@
+.pink a {
+  color: #7f0000;
+}
+.pink a:focus,
+.pink a:hover {
+  color: #cf1919;
+}
+.pink body {
+  background: #ffafaf;
+  color: #cf1919;
+}
+.pink #logo {
+	color: #cf1919;
+}
+.pink #logo path {
+	fill: #cf1919;
+}
+.pink #calculator #tip th {
+  background: url(/i/plus-pink.gif) left center no-repeat;
+}
+.pink .loader {
+  background-color: #ffafaf;
+  background-image: url(/i/loading-pink.gif);
+}
+.pink li#pink {
+  clear: both;
+  float: right;
+  background: url(/i/pink.gif) center left no-repeat;
+}
+.pink #pink a {
+  display: block;
+  line-height: 23px;
+  padding: 0 0 3px 18px;
+}
+.pink #promo {
+  background: #222;
+  border-color: #cf1919Å;
+}

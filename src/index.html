@@ -1,0 +1,166 @@
+---
+layout: "page"
+body_class: "home"
+ogtype: "website"
+sitemap: true
+---
+
+<p id="message">Enter the check amount &#38; how much you want to tip.</p>
+
+<form id="calc" method="post" action="/process/">
+	<fieldset>
+		<table id="calculator">
+			<tbody>
+				{% edge %}
+					{% set check = eleventy.edge.cookies.check %}
+					{% set tip = eleventy.edge.cookies.tip %}
+					{% set total = eleventy.edge.cookies.total %}
+					<tr id="check">
+						<th scope="row">
+							<label for="form-check">Check</label>
+						</th>
+						<td>
+							<input type="number"
+								id="form-check" name="check"
+								min="0.00" step=".01"
+								autofocus
+								inputmode="latin digits"
+								placeholder="12.39"
+								required
+								{% if check %}value="{{ check }}"{% endif %}
+								>
+						</td>
+					</tr>
+					<tr id="tip">
+						<th scope="row">
+							<label for="form-percent">Tip</label>
+						</th>
+						<td>
+							<select id="form-percent" name="percent"
+								required
+								>
+								<option value=".05">5%</option>
+								<option value=".1">10%</option>
+								<option value=".15">15%</option>
+								<option value=".2" selected="selected">20%</option>
+								<option value=".25">25%</option>
+								<option value=".3">30%</option>
+								<option value=".35">35%</option>
+								<option value=".4">40%</option>
+								<option value=".45">45%</option>
+								<option value=".5">50%</option>
+							</select>
+						</td>
+					</tr>
+					<tr id="total">
+						<th>Total</th>
+						<td>
+							<input id="form-submit" type="submit" name="submit" value="Calculate" />
+						</td>
+					</tr>
+				{% endedge %}
+			</tbody>
+		</table>
+	</fieldset>
+</form>
+
+<script>
+{% include "js/tipr.js" %}
+
+function calculator()
+{
+	var form,
+			check_field,
+			percent_field,
+			check,
+			tip,
+			total,
+			total_th,
+			loader,
+			message,
+			messagetxt,
+			again;
+
+  // init
+  function init()
+	{
+    if( !document.getElementById( 'calc' ) ){ return; }
+
+    // form
+    form = document.getElementById( 'calc' );
+
+    // fields
+    check_field   = document.getElementById( 'form-check' );
+    percent_field = document.getElementById( 'form-percent' );
+
+    // cells
+    check    = document.getElementById( 'check' ).getElementsByTagName( 'td' )[0];
+    tip      = document.getElementById( 'tip' ).getElementsByTagName( 'td' )[0];
+    total    = document.getElementById( 'total' ).getElementsByTagName( 'td' )[0];
+    total_th = document.getElementById( 'total' ).getElementsByTagName( 'th' )[0];
+
+    // loader
+    loader = document.createElement( 'div' );
+    loader.className = 'loader';
+
+    // message
+    message = document.getElementsByTagName( 'p' )[0];
+    messagetxt = 'Ok, here ya go:';
+    
+    // again
+    again = document.createElement( 'p' );
+    again.innerHTML = 'Wanna <a href="/">do another</a>?';
+
+    // hijack
+    form.onsubmit = function(){
+			calculate(); return false;
+		};
+  }
+
+  // runs the Ajax query
+  function calculate()
+	{
+    var check   = check_field.value;
+    if ( check == '' ){
+			return err();
+		}
+
+    showLoader();
+    
+		result = process( check, percent_field.value );
+
+		updateUI( result );
+  }
+
+  // parses the response
+  function updateUI( result ){
+    hideLoader();
+
+    check.innerHTML    = '$' + result.check;
+    tip.innerHTML      = '$' + result.tip;
+    total.innerHTML    = '$' + result.total;
+    total_th.innerHTML = 'Total&nbsp;';
+
+    message.innerHTML = messagetxt;
+    form.appendChild( again );
+  }
+
+  // loader controls
+  function showLoader()
+	{
+    document.getElementsByTagName( 'body' )[0].appendChild( loader );
+  }
+  function hideLoader()
+	{
+    loader.parentNode.removeChild( loader );
+  }
+
+  // vroom
+  init();
+
+}
+if( document.getElementById &&
+    document.getElementsByTagName ){
+  var calc = new calculator();
+}
+</script>

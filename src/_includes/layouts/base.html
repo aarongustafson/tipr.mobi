@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html id="tipr_mobi" lang="en" dir="ltr">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<script>
+			const month = (new Date()).getMonth()+1;
+			if ( month == 10 ){
+				document.getElementById('tipr_mobi').className = 'pink';
+			}
+		</script>
+
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta http-equiv="cleartype" content="on">
+
+		{% seo "" %}
+		<meta name="Copyright" content="(c) Aaron Gustafson. All rights reserved."/>
+
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+		<link rel="apple-touch-icon" href="{{ site.logo }}">
+
+		<meta http-equiv="Content-Language" content="en-us"/>
+		<meta property="og:locale" content="{{ site.lang }}">
+
+		<meta http-equiv="Cache-Control" content="max-age=86400"/>
+		<meta name="revisit-after" content="7 days">
+		<meta name="ROBOTS" content="index,follow">
+		<meta name="robots" content="NOODP">
+		
+		<link href="/appicon.png" rel="icon">
+		<link rel="manifest" href="/manifest.json">
+
+		{% set css %}
+  		{% include "css/main.css" %}
+			{% include "css/color.css" %}
+			{% include "css/pink.css" %}
+		{% endset %}
+		<style media="screen">{{ css | cssmin | safe }}</style>
+
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="theme-color" content="#27831B">
+		<meta name="MobileOptimized" content="width">
+		<meta name="HandheldFriendly" content="true">
+
+		<meta name="monetization" content="$ilp.uphold.com/bQeAXrfee6wW">
+	</head>
+
+	<body {% if body_class %} class="{{ body_class }}" {% endif %} >
+
+		<header>
+			<h1>
+				<a href="/" id="logo">
+					{% set logo %}{{ "/src/static/i/logo.svg" | svgContents | safe }}{% endset %}
+					{{ logo | safe }}
+					Tipr
+				</a>
+			</h1>
+		</header>
+
+		<main role="main">
+			{% block content %}
+				{{ content | safe }}
+			{% endblock %}
+		</main>
+
+		<footer>
+			<small id="copyright">&#169; <a href="https://www.aaron-gustafson.com">Aaron Gustafson</a>. All rights reserved.</small>
+			{% include "partials/nav.html" %}
+		</footer>
+
+		<script>
+		  {% include "js/register-serviceworker.js" %}
+		</script>
+	</body>
+
+</html>

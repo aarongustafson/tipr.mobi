@@ -1,0 +1,31 @@
+---
+layout: "page"
+body_class: "results"
+sitemap: false
+---
+
+<p>Ok, here ya go:</p>
+
+<table id="calculator">
+	<tbody>
+		{% edge %}
+			{% set check = eleventy.edge.cookies.check %}
+			{% set tip = eleventy.edge.cookies.tip %}
+			{% set total = eleventy.edge.cookies.total %}
+			<tr id="check">
+				<th scope="row">Check&nbsp;</th>
+				<td>${{ check }}</td>
+			</tr>
+			<tr id="tip">
+				<th scope="row">Tip&nbsp;</th>
+				<td>${{ tip }}</td>
+			</tr>
+			<tr id="total">
+				<th scope="row">Total&nbsp;</th>
+				<td>${{ total }}</td>
+			</tr>
+		{% endedge %}
+	</tbody>
+</table>
+
+<p>Wanna <a href="/?reset">do another</a>?</p>

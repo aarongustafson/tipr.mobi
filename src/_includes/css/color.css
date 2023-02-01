@@ -1,0 +1,21 @@
+a, code {
+  color: #7def77;
+}
+a:focus, a:hover {
+  color: #42bf3b;
+}
+body {
+  background: #000;
+  color: #ebebeb;
+}
+#calculator #tip th {
+  background: url(/i/plus.gif) left center no-repeat;
+}
+.loader {
+  background-color: #000;
+  background-image: url(/i/loading.gif);
+}
+#promo {
+  background: #222;
+  border-color: #42BF3B;
+}

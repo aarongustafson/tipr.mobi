@@ -1,0 +1,26 @@
+{
+	"domain": "tipr.mobi",
+	"url": "https://tipr.mobi",
+	"lang": "en_US",
+	"title": "Tipr",
+	"logo": "/i/appicon.png",
+	"minify": true,
+	"author": {
+		"name": "Aaron Gustafson",
+		"uri": "https://www.aaron-gustafson.com",
+		"twitter": "AaronGustafson"
+	},
+	"twitter": {
+		"username": "tipr"
+	},
+	"navigation": [
+		{
+			"text": "Read the Tipr FAQ",
+			"url": "/about/"
+		}
+	],
+	"github": {
+		"repo": "aarongustafson/tipr.mobi",
+		"branch": "main"
+	}
+}
