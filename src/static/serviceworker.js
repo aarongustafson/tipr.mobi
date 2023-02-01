@@ -2,7 +2,7 @@ const VERSION = "v2:", // be sure to update ../_includes/js/register-servicework
 
       // Stuff to load on install
       preinstall = [
-        "/appicon.png",
+        "/favicon.ico",
         "/"
       ],
       
@@ -38,7 +38,7 @@ self.addEventListener( "activate", event => {
 self.addEventListener( "fetch", event => {
 	const request = event.request;
 
-	if ( request.url.indexOf('extension') > -1 )
+	if ( request.url.indexOf('chrome-extension://') === 0 )
 	{
 		event.respondWith(
 			fetch( request )
