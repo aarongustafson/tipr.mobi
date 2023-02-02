@@ -1,4 +1,4 @@
-const VERSION = "v2:", // be sure to update ../_includes/js/register-serviceworker.js too
+const VERSION = "v2.1:", // be sure to update ../_includes/js/register-serviceworker.js too
 
       // Stuff to load on install
       preinstall = [
