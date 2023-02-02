@@ -16,6 +16,13 @@
 		{
 			"src": "/i/icon.svg",
 			"type": "image/svg+xml",
+			"sizes": "any",
+			"purpose": "any"
+		},
+		{
+			"src": "/i/icon-1024.png",
+			"type": "image/png",
+			"sizes": "1024x1024",
 			"purpose": "maskable"
 		},
 		{
@@ -25,9 +32,9 @@
 			"purpose": "maskable"
 		},
 		{
-			"src": "/i/icon-256.png",
+			"src": "/i/icon-384.png",
 			"type": "image/png",
-			"sizes": "256x256",
+			"sizes": "384x384",
 			"purpose": "maskable"
 		},
 		{
@@ -37,15 +44,9 @@
 			"purpose": "maskable"
 		},
 		{
-			"src": "/i/icon-152.png",
+			"src": "/i/icon-128.png",
 			"type": "image/png",
-			"sizes": "152x152",
-			"purpose": "maskable"
-		},
-		{
-			"src": "/i/icon-144.png",
-			"type": "image/png",
-			"sizes": "144x144",
+			"sizes": "128x128",
 			"purpose": "maskable"
 		},
 		{
@@ -61,15 +62,15 @@
 			"purpose": "maskable"
 		},
 		{
-			"src": "/i/icon-32.png",
+			"src": "/i/icon-48.png",
 			"type": "image/png",
-			"sizes": "32x32",
+			"sizes": "48x48",
 			"purpose": "maskable"
 		},
 		{
 			"src": "/favicon.ico",
 			"type": "image/ico",
-			"sizes": "16x16,32x32"
+			"sizes": "16x16 32x32"
 		}
 	],
 	"scope": "/",
