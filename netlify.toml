@@ -32,7 +32,8 @@ path = "/*"
 [[headers]]
   for = "/*.html"
   [headers.values]
-  Link = [
+	Cache-Control = "max-age=86400"
+	Link = [
   "</serviceworker.js>;as=script;rel=preload",
   ]
 
@@ -40,3 +41,15 @@ path = "/*"
   for = "/serviceworker.js"
   [headers.values]
   Cache-Control = "max-age=0"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+  Cache-Control = "max-age=86400"
+	Content-Type = "application/json; charset=utf-8"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+  Cache-Control = "max-age=86400"
+	Content-Type = "image/svg+xml; charset=utf-8"
