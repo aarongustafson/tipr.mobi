@@ -21,7 +21,7 @@ path = "/*"
 [[headers]]
   for = "*"
   [headers.values]
-  Content-Security-Policy = "default-src 'self' data: 'unsafe-inline'; upgrade-insecure-requests; block-all-mixed-content; disown-opener"
+  Content-Security-Policy = "default-src 'self' data: 'unsafe-inline'; upgrade-insecure-requests; block-all-mixed-content"
   Report-To = '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://aarongustafson.report-uri.com/a/d/g"}],"include_subdomains":true}'
   Timing-Allow-Origin = "*"
   Upgrade-Insecure-Requests = "1"
