@@ -153,3 +153,13 @@ em, strong {
   right: 0;
   bottom: 0;
 }
+
+.toast {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+}
+
+[hidden] {
+	display: none;
+}

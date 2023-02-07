@@ -1,9 +1,9 @@
-const VERSION = "v1:", // be sure to update ../_includes/js/register-serviceworker.js too
+const VERSION = 'v1:', // be sure to update ../_includes/js/register-serviceworker.js too
 
       // Stuff to load on install
       preinstall = [
-        "/favicon.ico",
-        "/"
+        '/favicon.ico',
+        '/'
       ],
       
       fetch_config = {
@@ -12,7 +12,7 @@ const VERSION = "v1:", // be sure to update ../_includes/js/register-servicework
         }
       };
 
-self.addEventListener( "activate", event => {
+self.addEventListener( 'activate', event => {
   
   // console.log('WORKER: activate event in progress.');
   
@@ -35,7 +35,14 @@ self.addEventListener( "activate", event => {
 
 });
 
-self.addEventListener( "fetch", event => {
+self.addEventListener( 'message', event => {
+  if ( event.data.action === 'skipWaiting' )
+	{
+    self.skipWaiting();
+  }
+});
+
+self.addEventListener( 'fetch', event => {
 	const request = event.request;
 
 	if ( request.url.indexOf('chrome-extension://') === 0 )
@@ -73,12 +80,7 @@ self.addEventListener( "fetch", event => {
 	}
 });
 
-self.addEventListener( "install", function( event ){
-
-  // console.log( "WORKER: install event in progress." );
-
-  // immediately take over
-  self.skipWaiting();
+self.addEventListener( 'install', function( event ){
 
   event.waitUntil(
     caches.open( VERSION )
@@ -91,7 +93,6 @@ self.addEventListener( "install", function( event ){
 
 function saveToCache( request, response )
 {
-  // console.log( 'saving a copy of', request.url );
   caches.open( VERSION )
     .then( cache => {
       return cache.put( request, response );
@@ -112,13 +113,13 @@ function refreshCachedCopy( the_request )
 
 function respondWithOfflinePage()
 {
-  return caches.match( "/" )
+  return caches.match( '/' )
            .catch( () => respondWithServerOffline() );
 }
 
 function respondWithServerOffline(){
-  return new Response( "", {
+  return new Response( '', {
     status: 408,
-    statusText: "The server appears to be offline."
+    statusText: 'Tipr appears to be offline.'
   });
 }
