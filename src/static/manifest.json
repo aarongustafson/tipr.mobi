@@ -78,5 +78,8 @@
 	"serviceworker": {
 		"src": "/serviceworker.js",
 		"scope": "/"
+	},
+	"edge_side_panel": {
+		"preferred_width": 300
 	}
 }
